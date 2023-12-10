@@ -6,16 +6,27 @@ getData();
             const response = await fetch('data.json'); 
             const data = await response.json(); 
             length = data.data.length; 
+
+            //get variables for the count in empty arrays or zero for start count
+            let labels = []; 
+            let values = []; 
+            let totalCount = 0;
+            let totalAvg = 0;
             
             //stages data output for the HTML table
             let dataprint = document.querySelector("#data-output");
             outputPrint = "";
 
-            labels = []; 
-            values = []; 
             for (let i = 0; i < length; i++) { 
                 let obj = data.data[i];
+
+                //get total of all the counts
+                totalCount += obj.count;
+                totalAvg = Math.round(totalCount / length);
+                document.getElementById("ttlCount").innerHTML = "Count: " + totalCount;
                 
+                //get average of all the counts
+                document.getElementById("ttlAvg").innerHTML = "Average: " + totalAvg;
                 //prints data onto table 
                 outputPrint += `
                     <tr>
@@ -29,9 +40,7 @@ getData();
                 values.push(data.data[i].count);                 
             } 
             dataprint.innerHTML = outputPrint;
-            
-
-
+            //chart data display
             new Chart(document.getElementById("bar-chart"), { 
                 type: 'pie', 
                 data: { 

@@ -40,7 +40,8 @@
     
   </tbody>
 </table>
-
+<p id="ttlCount"></p>
+<p id="ttlAvg"></p>
 </div>
 <!-- jQuery library -->
 <!-- Latest compiled JavaScript -->

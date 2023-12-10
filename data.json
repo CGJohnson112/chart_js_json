@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Measure One",
+            "count": 5000
+        }, {
+            "id": 2,
+            "name": "Measure Two",
+            "count": 2500
+        }, {
+            "id": 3,
+            "name": "Measure Three",
+            "count": 1250
+        }
+    ]
+
+}
+

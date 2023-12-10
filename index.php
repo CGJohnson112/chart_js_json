@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSON API US Population </title>
+<title>JSON API Pie CHart and Table Data </title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -31,12 +31,12 @@
       <th scope="col">Quantity</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
+  <tbody id ="data-output">
+    <!--<tr>
       <th scope="row" id="idNo"></th>
       <td id="name"></td>
       <td id="count"></td>
-    </tr>
+    </tr>-->
     
   </tbody>
 </table>

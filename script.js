@@ -6,14 +6,31 @@ getData();
             const response = await fetch('data.json'); 
             const data = await response.json(); 
             length = data.data.length; 
-  
+            
+            //stages data output for the HTML table
+            let dataprint = document.querySelector("#data-output");
+            outputPrint = "";
+
             labels = []; 
             values = []; 
-            let total = 0;
             for (let i = 0; i < length; i++) { 
+                let obj = data.data[i];
+                
+                //prints data onto table 
+                outputPrint += `
+                    <tr>
+                        <td>${obj.id}</td>
+                        <td>${obj.name}</td>
+                        <td>${obj.count}</td>
+                    </tr>
+                
+                `;
                 labels.push(data.data[i].name); 
                 values.push(data.data[i].count);                 
             } 
+            dataprint.innerHTML = outputPrint;
+            
+
 
             new Chart(document.getElementById("bar-chart"), { 
                 type: 'pie', 
